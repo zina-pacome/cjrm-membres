@@ -149,23 +149,45 @@ export default function BadgePage() {
 
           {/* Header badge */}
           <div style={{
-            background: '#333333', padding: '10px 16px',
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            background: '#1a1a2e', padding: '0 14px',
+            height: '56px', display: 'flex',
+            alignItems: 'center', justifyContent: 'space-between',
+            position: 'relative',
           }}>
-            <div>
-              <div style={{ color: '#ffffff', fontSize: '14px', fontWeight: '800', letterSpacing: '1px' }}>
-                CJRM
-              </div>
-              <div style={{ color: '#bdbdbd', fontSize: '7px', lineHeight: '1.4', marginTop: '1px' }}>
-                Commission des Jeunes pour<br />la Refondation de Madagascar
+            {/* Logo cercle parfait extrême gauche */}
+            <div style={{
+              width: '40px', height: '40px', borderRadius: '50%',
+              overflow: 'hidden', border: '2px solid rgba(255,255,255,0.4)',
+              flexShrink: 0,
+            }}>
+              <img src="/logo-cjrm.png" alt="Logo CJRM"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+
+            {/* CJRM + sous-titre centré */}
+            <div style={{
+              position: 'absolute', left: 0, right: 0,
+              textAlign: 'center', pointerEvents: 'none',
+            }}>
+              <div style={{
+                color: '#ffffff', fontSize: '17px',
+                fontWeight: '800', letterSpacing: '2px', lineHeight: '1.15',
+              }}>CJRM</div>
+              <div style={{
+                color: 'rgba(255,255,255,0.5)', fontSize: '5.5px',
+                lineHeight: '1.3', whiteSpace: 'nowrap',
+              }}>
+                Communauté des Jeunes pour la Refondation de Madagascar
               </div>
             </div>
+
+            {/* Statut à droite */}
             <div style={{
-              background: 'rgba(255,255,255,0.1)', borderRadius: '6px',
+              background: 'rgba(255,255,255,0.12)', borderRadius: '6px',
               padding: '3px 8px', color: '#ffffff',
-              fontSize: '9px', fontWeight: '700',
+              fontSize: '8px', fontWeight: '700', flexShrink: 0,
             }}>
-              N° {String(membre.numero_membre).padStart(4, '0')}
+              {membre.statut.toUpperCase()}
             </div>
           </div>
 
