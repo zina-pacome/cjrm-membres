@@ -140,9 +140,7 @@ export default function NouveauMembre() {
                 Choisir une photo
                 <input type="file" accept="image/*" onChange={handlePhoto} style={{ display: 'none' }} />
               </label>
-              <div style={{ fontSize: '12px', color: '#bdbdbd', marginTop: '8px' }}>
-                JPG, PNG — max 5 Mo
-              </div>
+              <div style={{ fontSize: '12px', color: '#bdbdbd', marginTop: '8px' }}>JPG, PNG — max 5 Mo</div>
             </div>
           </div>
         </div>
@@ -150,25 +148,25 @@ export default function NouveauMembre() {
         {/* Identité */}
         <div style={card}>
           <div style={sectionTitle}>Identité</div>
-          <div style={{ ...grid2, marginBottom: '16px' }}>
+          <div style={grid2}>
             <div>
-              <label style={labelStyle}>Nom <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="nom" value={form.nom} onChange={handleChange} required
+              <label style={labelStyle}>Nom</label>
+              <input name="nom" value={form.nom} onChange={handleChange}
                 style={inputStyle} placeholder="Ex: RAKOTO" />
             </div>
             <div>
-              <label style={labelStyle}>Prénom <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="prenom" value={form.prenom} onChange={handleChange} required
+              <label style={labelStyle}>Prénom</label>
+              <input name="prenom" value={form.prenom} onChange={handleChange}
                 style={inputStyle} placeholder="Ex: Jean" />
             </div>
             <div>
-              <label style={labelStyle}>Lieu de naissance <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="lieu_naissance" value={form.lieu_naissance} onChange={handleChange} required
+              <label style={labelStyle}>Lieu de naissance</label>
+              <input name="lieu_naissance" value={form.lieu_naissance} onChange={handleChange}
                 style={inputStyle} placeholder="Ex: Antananarivo" />
             </div>
             <div>
-              <label style={labelStyle}>Date de naissance <span style={{ color: '#eb5757' }}>*</span></label>
-              <input type="date" name="date_naissance" value={form.date_naissance} onChange={handleChange} required
+              <label style={labelStyle}>Date de naissance</label>
+              <input type="date" name="date_naissance" value={form.date_naissance} onChange={handleChange}
                 style={inputStyle} />
             </div>
           </div>
@@ -179,13 +177,13 @@ export default function NouveauMembre() {
           <div style={sectionTitle}>Carte d'Identité Nationale</div>
           <div style={grid2}>
             <div>
-              <label style={labelStyle}>Numéro CIN <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="numero_cin" value={form.numero_cin} onChange={handleChange} required
+              <label style={labelStyle}>Numéro CIN</label>
+              <input name="numero_cin" value={form.numero_cin} onChange={handleChange}
                 style={inputStyle} placeholder="Ex: 101 234 567 890" />
             </div>
             <div>
-              <label style={labelStyle}>Date de délivrance <span style={{ color: '#eb5757' }}>*</span></label>
-              <input type="date" name="date_delivrance_cin" value={form.date_delivrance_cin} onChange={handleChange} required
+              <label style={labelStyle}>Date de délivrance</label>
+              <input type="date" name="date_delivrance_cin" value={form.date_delivrance_cin} onChange={handleChange}
                 style={inputStyle} />
             </div>
           </div>
@@ -194,49 +192,47 @@ export default function NouveauMembre() {
         {/* Parents */}
         <div style={card}>
           <div style={sectionTitle}>Parents</div>
-          <div style={{ ...grid2 }}>
+          <div style={grid2}>
             <div style={{ marginBottom: '16px' }}>
-              <label style={labelStyle}>Nom du père <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="nom_pere" value={form.nom_pere} onChange={handleChange} required
+              <label style={labelStyle}>Nom du père</label>
+              <input name="nom_pere" value={form.nom_pere} onChange={handleChange}
                 style={inputStyle} placeholder="Nom complet du père" />
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={labelStyle}>Profession du père <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="profession_pere" value={form.profession_pere} onChange={handleChange} required
+              <label style={labelStyle}>Profession du père</label>
+              <input name="profession_pere" value={form.profession_pere} onChange={handleChange}
                 style={inputStyle} placeholder="Ex: Agriculteur" />
             </div>
             <div>
-              <label style={labelStyle}>Nom de la mère <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="nom_mere" value={form.nom_mere} onChange={handleChange} required
+              <label style={labelStyle}>Nom de la mère</label>
+              <input name="nom_mere" value={form.nom_mere} onChange={handleChange}
                 style={inputStyle} placeholder="Nom complet de la mère" />
             </div>
             <div>
-              <label style={labelStyle}>Profession de la mère <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="profession_mere" value={form.profession_mere} onChange={handleChange} required
+              <label style={labelStyle}>Profession de la mère</label>
+              <input name="profession_mere" value={form.profession_mere} onChange={handleChange}
                 style={inputStyle} placeholder="Ex: Commerçante" />
             </div>
           </div>
         </div>
 
-        {/* Contact */}
+        {/* Contact & Poste */}
         <div style={card}>
           <div style={sectionTitle}>Contact & Poste</div>
           <div style={grid2}>
             <div>
-              <label style={labelStyle}>Téléphone <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="telephone" value={form.telephone} onChange={handleChange} required
+              <label style={labelStyle}>Téléphone</label>
+              <input name="telephone" value={form.telephone} onChange={handleChange}
                 style={inputStyle} placeholder="+261 34 00 000 00" />
             </div>
             <div>
-              <label style={labelStyle}>
-                Email <span style={{ color: '#bdbdbd', fontWeight: '400' }}>(facultatif)</span>
-              </label>
+              <label style={labelStyle}>Email</label>
               <input type="email" name="email" value={form.email} onChange={handleChange}
                 style={inputStyle} placeholder="jean@email.com" />
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
-              <label style={labelStyle}>Poste au sein de l'association <span style={{ color: '#eb5757' }}>*</span></label>
-              <input name="poste" value={form.poste} onChange={handleChange} required
+              <label style={labelStyle}>Poste au sein de l'association</label>
+              <input name="poste" value={form.poste} onChange={handleChange}
                 style={inputStyle} placeholder="Ex: Président, Secrétaire, Trésorier, Membre..." />
             </div>
           </div>
